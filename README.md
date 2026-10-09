@@ -37,7 +37,8 @@ Both `.mp4` and `.mkv` work, since VLC reads the chapter names from either.
    ```
    If `vlcrc` doesn't exist yet, open VLC, go to Tools → Preferences, click
    Save, close VLC, and try again.
-4. Start VLC. No extra console window should appear.
+4. Start VLC. No extra console window should appear. If it does, something in the
+   configuration is broken causing the lua script not to be loaded correctly.
 
 > **Important:** the value must be `luaintf`, not `lua`. Ticking "Lua
 > interpreter" in VLC's preferences writes `extraintf=lua`, which starts VLC's
