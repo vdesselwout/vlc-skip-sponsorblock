@@ -64,7 +64,8 @@ local function tick()
       if count and ch + 1 < count then
         vlc.var.set(input, "chapter", ch + 1)
       else
-        vlc.playlist.next()
+        -- final chapter: nothing to skip to, so just pause
+        if vlc.playlist.status() == "playing" then vlc.playlist.pause() end
       end
     end
   end
